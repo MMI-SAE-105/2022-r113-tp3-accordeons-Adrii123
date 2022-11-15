@@ -11,16 +11,16 @@
     <h1>Accordéon avec des booléens</h1>
     <div class="accordeon">
       <section x-data="{isOpen:false}";>
-        <button @click="isOpen = ! open">bouton 1</button>
-        <p x-show="isOpen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ab aperiam cum! Rerum quia officia ab minus minima dolorem recusandae odit, aut, quos eveniet provident vel. Hic sit nesciunt unde.</p>
+        <button @click="isOpen = ! isOpen">bouton 1</button>
+        <p x-show="isOpen" x-transition>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ab aperiam cum! Rerum quia officia ab minus minima dolorem recusandae odit, aut, quos eveniet provident vel. Hic sit nesciunt unde.</p>
       </section>
-      <section>
-        <button>bouton 2</button>
-        <p>Perspiciatis, eveniet quibusdam? Voluptatibus, illo perspiciatis! Nihil eveniet, quasi et architecto alias unde. Tempora nihil aliquid, ea qui quas repellendus modi dolorum tempore amet hic laborum doloremque debitis, ratione aut.</p>
+      <section x-data="{isOpen:false}";>
+        <button @click="isOpen = ! isOpen">bouton 2</button>
+        <p x-show="isOpen" x-transition>Perspiciatis, eveniet quibusdam? Voluptatibus, illo perspiciatis! Nihil eveniet, quasi et architecto alias unde. Tempora nihil aliquid, ea qui quas repellendus modi dolorum tempore amet hic laborum doloremque debitis, ratione aut.</p>
       </section>
-      <section>
-        <button>bouton 3</button>
-        <p>Repudiandae vitae sit enim aperiam eaque delectus similique eveniet magni reiciendis voluptas recusandae distinctio ipsam natus aut labore sunt rerum inventore suscipit facere voluptate, iste iusto corporis. Rem, eos mollitia.</p>
+      <section x-data="{isOpen:false}";>
+        <button @click="isOpen = ! isOpen">bouton 3</button>
+        <p x-show="isOpen" x-transition>Repudiandae vitae sit enim aperiam eaque delectus similique eveniet magni reiciendis voluptas recusandae distinctio ipsam natus aut labore sunt rerum inventore suscipit facere voluptate, iste iusto corporis. Rem, eos mollitia.</p>
       </section>
     </div>
   </body>

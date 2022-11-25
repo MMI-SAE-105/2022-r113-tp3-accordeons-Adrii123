@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onglets</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
     <h1>Onglets</h1>
+    <div id="onglets" x-data="{
+      ouvert : 1,
+    }">
+
+    <ul role="tablist">
+      <li role="tab" @click="ouvert = 1" :class="{'actif':ouvert==1}">Onglet 1</li>
+      <li role="tab" @click="ouvert = 2" :class="{'actif':ouvert==2}">Onglet 2</li>
+      <li role="tab" @click="ouvert = 3" :class="{'actif':ouvert==3}">Onglet 3</li>
+    </ul>
+
+    <div id="panneaux">
+      <div role="tabpanel" x-show="ouvert === 1">
+        <h1>Panneau 1</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto dolorum rem eius explicabo voluptatum minima, ex fuga id, eveniet quo officiis doloribus est sapiente eaque possimus, deleniti tempora culpa numquam!</p>
+      </div>
+      <div role="tabpanel" x-show="ouvert === 2">
+        <h1>Panneau 2</h1>
+        <p>Aperiam, quasi omnis! Provident placeat odit dolorum maiores eaque mollitia sed iusto iste repellat, magni temporibus! Non quod debitis facilis dolor voluptates! Repellat, ullam ut cupiditate vitae animi sit a!</p>
+      </div>
+      <div role="tabpanel" x-show="ouvert === 3">
+        <h1>Panneau 3</h1>
+        <p>Blanditiis molestiae molestias ab suscipit harum non, doloribus laboriosam quia. Excepturi libero sunt hic, at quibusdam omnis maxime, modi assumenda illum est aspernatur consequatur corrupti, culpa tempore nam sed cupiditate.</p>
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+#onglets li {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  cursor: pointer;
+  color:blue;
+}
+
+#onglets li.actif {
+  background-color: blue;
+  color: white;
+}
+
+#panneaux {
+  background-color: aquamarine;
+  width: 400px;
+  height: 200px;
+  border: 1px solid pink;
+}
+
+.tab {
+  position: absolute;
+}
+</style>
